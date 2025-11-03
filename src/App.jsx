@@ -1,6 +1,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import avatar from '/Anh_Bui.jpg'
+import resumePdf from '/resume.pdf'
 
 const Container = ({ children, className = "" }) => (
   <div className={`mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 ${className}`}>{children}</div>
@@ -153,7 +155,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.08 }}
               className="w-44 h-44 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-2xl overflow-hidden ring-1 ring-neutral-800 bg-neutral-900 shadow-lg"
             >
-              <img src="./public/Anh_Bui.jpg" alt="Anh Bui" className="w-full h-full object-cover" />
+              <img src={avatar} alt="Anh Bui" className="w-full h-full object-cover" />
             </motion.div>
           </div>
 
@@ -337,7 +339,7 @@ const Resume = () => (
   <Section id="resume" title="Resume" subtitle="View it inline or download the PDF.">
     <div className="rounded-2xl border border-neutral-800 overflow-hidden">
       <iframe
-        src="./public/resume.pdf"
+        src={resumePdf}
         title="Resume"
         className="w-full h-[720px]"
       />
