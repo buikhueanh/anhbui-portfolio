@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+
 import avatar from '/Anh_Bui.jpg'
 import resumePdf from '/resume.pdf'
 
@@ -146,14 +147,14 @@ const Hero = () => {
       </motion.div>
 
       <Container>
-  <div className="grid gap-0 md:grid-cols-2 md:items-center">
-          {/* Avatar column (left) */}
+  <div className="grid gap-6 md:gap-0 md:grid-cols-2 md:items-center">
+          {/* Avatar column (left on md+, centered on mobile) */}
           <div className="flex justify-center md:justify-start">
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.08 }}
-              className="w-44 h-44 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-2xl overflow-hidden ring-1 ring-neutral-800 bg-neutral-900 shadow-lg"
+              className="w-36 h-36 sm:w-44 sm:h-44 md:w-72 md:h-72 rounded-2xl overflow-hidden ring-1 ring-neutral-800 bg-neutral-900 shadow-lg"
             >
               <img src={avatar} alt="Anh Bui" className="w-full h-full object-cover" />
             </motion.div>
@@ -165,7 +166,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl sm:text-6xl font-bold tracking-tight"
+              className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight"
             >
               Hi, I am Anh Bui
             </motion.h1>
@@ -173,15 +174,15 @@ const Hero = () => {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.05 }}
-              className="mt-3 max-w-2xl text-neutral-300 text-lg"
+              className="mt-3 max-w-2xl text-neutral-300 text-base sm:text-lg"
             >
               I build reliable software and data systems. I like simple, minimal interfaces with bold tech behind the scenes.
             </motion.p>
-            <div className="mt-6 flex items-center gap-3">
+            <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
               <PrimaryButton href="#projects">View Projects</PrimaryButton>
               <GhostButton href="#contact">Contact Me</GhostButton>
             </div>
-            <div className="mt-4 flex gap-2">
+            <div className="mt-4 flex flex-wrap gap-2">
               <Pill>Software Engineer</Pill>
               <Pill>Data Engineer</Pill>
               <Pill>CS + Business Analytics, DePauw</Pill>
@@ -345,7 +346,14 @@ const Resume = () => (
       />
     </div>
     <div className="mt-4">
-      <PrimaryButton href="/resume.pdf">Download</PrimaryButton>
+      {/* Use an anchor with download attribute to trigger file download */}
+      <a
+        href={resumePdf}
+        download
+        className="inline-flex items-center justify-center rounded-2xl px-5 py-2 text-sm font-semibold shadow-lg shadow-cyan-500/10 bg-cyan-500 hover:bg-cyan-400 active:bg-cyan-600 text-neutral-900 transition"
+      >
+        Download
+      </a>
     </div>
   </Section>
 );
