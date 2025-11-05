@@ -330,7 +330,9 @@ const ProjectCard = ({ project }) => (
         >
           Demo
         </a>
-        <GhostButton href={project.codeUrl}>Code</GhostButton>
+        {project.codeUrl && project.codeUrl !== "#" && (
+          <GhostButton href={project.codeUrl}>Code</GhostButton>
+        )}
       </div>
     </div>
   </motion.article>
