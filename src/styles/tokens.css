@@ -1,0 +1,17 @@
+:root {
+  --c-bg:        #0F172A;
+  --c-surface:   #1E293B;
+  --c-surface-2: #162032;
+  --c-primary:   #A9DEF9;
+  --c-secondary: #E4C1F9;
+  --c-accent:    #FF99C8;
+  --c-highlight: #D8F3DC;
+  --c-light:     #F8FAFC;
+  --c-border:    #2A3A52;
+  --c-border-hi: #3B5068;
+  --c-muted:     #64748B;
+  --c-soft:      #94A3B8;
+
+  --font-display: 'VT323', monospace;
+  --font-body: 'Space Grotesk', sans-serif;
+}
