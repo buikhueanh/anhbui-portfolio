@@ -42,10 +42,7 @@ export function Projects() {
       <FilterBar options={types} active={filter}
         onChange={setFilter} />
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)', gap: 11,
-      }}>
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-3">
         {shown.map(p => (
           <ProjectCard key={p.id} project={p}
             onSelect={setSelected} />

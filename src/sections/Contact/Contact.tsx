@@ -58,11 +58,7 @@ export function Contact() {
       </div>
 
       <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: 24, alignItems: 'stretch',
-        }}
+        className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-6"
       >
         <div>
           <div
@@ -88,7 +84,7 @@ export function Contact() {
               marginBottom: 24,
             }}
           >
-            I'm a Computer Science and Business Analytics student at DePauw,
+            I&apos;m a Computer Science and Business Analytics student at DePauw,
             building full-stack, AI-powered, and data-driven products.
             Currently looking for new grad opportunities in software
             engineering, product, or data.

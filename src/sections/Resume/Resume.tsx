@@ -68,7 +68,7 @@ export function Resume() {
 
             <HighlightStats stats={resumeStats} />
 
-            <div style={{ display: 'flex', gap: 4, marginBottom: 14 }}>
+            <div style={{ display: 'flex', gap: 4, marginBottom: 14, flexWrap: 'wrap' }}>
               {(['preview','skills','achievements'] as ResumeTab[])
                 .map(t => (
                   <button key={t} onClick={() => setTab(t)} style={{
@@ -95,7 +95,7 @@ export function Resume() {
               <ResumeTabContent tab={tab} />
             </div>
 
-            <div style={{ display: 'flex', gap: 9 }}>
+            <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
               <a href="/resume.pdf" download style={{
                 fontFamily: 'monospace',
                 background: 'transparent',
@@ -106,6 +106,7 @@ export function Resume() {
                 letterSpacing: 1,
                 textDecoration: 'none',
                 display: 'inline-block',
+                textAlign: 'center',
               }}>▼ DOWNLOAD RESUME.EXE</a>
               <a href="/resume.pdf" target="_blank" rel="noreferrer" style={{
                 fontFamily: 'monospace',
@@ -118,6 +119,7 @@ export function Resume() {
                 transition: 'opacity 0.3s',
                 textDecoration: 'none',
                 display: 'inline-block',
+                textAlign: 'center',
               }}>⤢ PREVIEW</a>
             </div>
           </div>

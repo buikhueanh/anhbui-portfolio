@@ -6,9 +6,18 @@ import type { RoomObject as RoomObjectType } from '@/types'
 
 interface Props { obj: RoomObjectType }
 
+const ROOM_W = 460
+const ROOM_H = 400
+
 export function RoomObject({ obj }: Props) {
   const { go } = useSection()
   const [hovered, setHovered] = useState(false)
+
+  // Room objects are authored at a 460×400 coordinate system.
+  // Convert to percentages so the room can shrink on phones.
+  const topPct = `${(obj.top / ROOM_H) * 100}%`
+  const leftPct = `${(obj.left / ROOM_W) * 100}%`
+
   return (
     <div
       onMouseEnter={() => setHovered(true)}
@@ -16,7 +25,7 @@ export function RoomObject({ obj }: Props) {
       onClick={() => go(obj.id)}
       style={{
         position: 'absolute',
-        top: obj.top, left: obj.left,
+        top: topPct, left: leftPct,
         cursor: 'pointer',
       }}
     >

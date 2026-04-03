@@ -15,7 +15,8 @@ export function PixelRoom() {
 
   return (
     <div style={{
-      width: 460, height: 400,
+      width: 'min(460px, 100%)',
+      aspectRatio: '460 / 400',
       background: 'var(--c-surface)',
       border: '1px solid var(--c-border-hi)',
       borderRadius: 12,
@@ -30,18 +31,18 @@ export function PixelRoom() {
 
       <div style={{
         position: 'absolute', bottom: 0,
-        left: 0, right: 0, height: 88,
+        left: 0, right: 0, height: '22%',
         background: '#0f2a0f',
       }} />
       <div style={{
-        position: 'absolute', bottom: 88,
-        left: 0, right: 0, height: 32,
+        position: 'absolute', bottom: '22%',
+        left: 0, right: 0, height: '8%',
         background: '#1a3a1a',
         borderTop: '1px solid #2a5a2a',
       }} />
 
       <div style={{
-        position: 'absolute', bottom: 120, left: '50%',
+        position: 'absolute', bottom: '30%', left: '50%',
         transform: 'translateX(-50%)',
         display: 'flex', flexDirection: 'column',
         alignItems: 'center',
@@ -62,8 +63,8 @@ export function PixelRoom() {
         .map((color, i) => (
           <div key={i} style={{
             position: 'absolute',
-            top: floatIdx === i ? 40 : 52,
-            left: [80, 220, 370][i],
+            top: floatIdx === i ? '10%' : '13%',
+            left: ['17.4%','47.8%','80.4%'][i],
             width: 10, height: 10,
             background: color, borderRadius: 1,
             transition: 'top 0.8s', opacity: 0.7,

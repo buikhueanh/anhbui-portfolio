@@ -24,12 +24,16 @@ export function Experience() {
           fontSize: 22, letterSpacing: 2,
         }}>EXPERIENCE</span>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 16, alignItems: 'stretch' }}>
-        <TimelineNav jobs={jobs}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-[380px_1fr] md:gap-4">
+        <TimelineNav
+          jobs={jobs}
           activeIndex={activeIndex}
-          onSelect={setActiveIndex} />
+          onSelect={setActiveIndex}
+          renderMobileDetail={(j) => <ExperienceDetail job={j} />}
+        />
+
         {job && (
-          <div style={{ minWidth: 0 }}>
+          <div className="hidden min-w-0 md:block">
             <ExperienceDetail job={job} />
           </div>
         )}

@@ -30,10 +30,7 @@ export function About() {
         }}>ABOUT</span>
       </div>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '380px 1fr', gap: 40,
-      }}>
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-[380px_1fr] md:gap-10">
         {/* Left column: profile + status */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14, alignSelf: 'stretch' }}>
           <ProfileCard />

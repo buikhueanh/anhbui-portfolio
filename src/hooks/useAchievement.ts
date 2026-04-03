@@ -19,9 +19,15 @@ export function useAchievement(active: SectionId) {
     if (active === 'hero') return
     if (sessionStorage.getItem(key)) return
     sessionStorage.setItem(key, '1')
-    setCurrent(MESSAGES[active])
-    const t = setTimeout(() => setCurrent(null), 2000)
-    return () => clearTimeout(t)
+
+    // Defer state updates to callbacks to avoid synchronous setState
+    // in the effect body (keeps behavior the same).
+    const show = window.setTimeout(() => setCurrent(MESSAGES[active]), 0)
+    const hide = window.setTimeout(() => setCurrent(null), 1500)
+    return () => {
+      clearTimeout(show)
+      clearTimeout(hide)
+    }
   }, [active])
 
   return {

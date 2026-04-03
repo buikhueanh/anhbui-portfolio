@@ -9,10 +9,15 @@ interface Props {
 
 export function TimelineNode({ job, isActive, isLast, onClick }: Props) {
   return (
-    <div onClick={onClick} style={{
-      flex: 1, display: 'flex', flexDirection: 'row',
-      gap: 12, cursor: 'pointer', minHeight: 0,
-    }}>
+    <div
+      onClick={onClick}
+      className="flex cursor-pointer gap-3 md:flex-1"
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        minHeight: 0,
+      }}
+    >
       {/* Dot + connecting line column */}
       <div style={{
         display: 'flex', flexDirection: 'column',

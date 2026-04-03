@@ -20,7 +20,7 @@ export function StatusBar({ xp }: Props) {
         fontSize: 9, letterSpacing: 2,
       }}>PORTFOLIO.EXE v2025.1</span>
 
-      <div style={{ display: 'flex', gap: 6 }}>
+      <div className="hidden md:flex" style={{ gap: 6 }}>
         {navItems.map(n => (
           <div key={n.id} onClick={() => go(n.id)}
             title={n.label}
