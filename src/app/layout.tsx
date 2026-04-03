@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'Anh Bui — Build. Analyze. Ship.',
     description:
       'Projects in software, AI, data, and product.',
-    images: ['/profile-image.jpg'],
+    images: [`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/profile-image.jpg`],
   },
 }
 

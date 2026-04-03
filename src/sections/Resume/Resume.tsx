@@ -96,7 +96,7 @@ export function Resume() {
             </div>
 
             <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
-              <a href="/resume.pdf" download style={{
+              <a href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/resume.pdf`} download style={{
                 fontFamily: 'monospace',
                 background: 'transparent',
                 color: 'var(--c-highlight)',
@@ -108,7 +108,7 @@ export function Resume() {
                 display: 'inline-block',
                 textAlign: 'center',
               }}>▼ DOWNLOAD RESUME.EXE</a>
-              <a href="/resume.pdf" target="_blank" rel="noreferrer" style={{
+              <a href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/resume.pdf`} target="_blank" rel="noreferrer" style={{
                 fontFamily: 'monospace',
                 background: 'var(--c-highlight)',
                 color: '#0F2A0F', border: 'none', 
