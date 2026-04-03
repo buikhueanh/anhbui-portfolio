@@ -9,7 +9,7 @@ export function SkillInventory({ chips }: Props) {
           background: 'var(--c-surface-2)',
           border: '1px solid var(--c-border-hi)',
           color: 'var(--c-soft)',
-          padding: '4px 10px', borderRadius: 5, fontSize: 11,
+          padding: '4px 10px', borderRadius: 5, fontSize: 15,
         }}>{chip}</span>
       ))}
     </div>

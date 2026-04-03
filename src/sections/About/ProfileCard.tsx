@@ -3,50 +3,47 @@ export function ProfileCard() {
     <div style={{
       background: 'var(--c-surface)',
       border: '1px solid var(--c-border-hi)',
-      borderRadius: 12, padding: 20, textAlign: 'center',
+      borderRadius: 14, padding: 28, textAlign: 'center',
+      flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center',
     }}>
       <div style={{
-        width: 72, height: 72, margin: '0 auto 12px',
-        background: 'var(--c-surface-2)',
+        width: 220, height: 220, margin: '0 auto 16px',
         border: '2px solid var(--c-primary)',
-        borderRadius: 10, display: 'flex',
-        alignItems: 'center', justifyContent: 'center',
+        borderRadius: 14, overflow: 'hidden',
       }}>
-        <div style={{
-          width: 36, height: 36,
-          background: 'var(--c-primary)', borderRadius: 4,
-        }} />
+        <img src="/profile-image.jpg" alt="Anh Bui"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       </div>
 
       <div style={{
-        color: 'var(--c-light)', fontSize: 16,
-        fontWeight: 700, marginBottom: 3,
+        color: 'var(--c-light)', fontSize: 22,
+        fontWeight: 700, marginBottom: 5,
       }}>Anh Bui</div>
 
       <div style={{
         fontFamily: 'monospace', color: 'var(--c-secondary)',
-        fontSize: 10, letterSpacing: 1,
+        fontSize: 13, letterSpacing: 2,
       }}>SOFTWARE ENGINEER</div>
 
       <div style={{
         fontFamily: 'monospace', color: 'var(--c-muted)',
-        fontSize: 9, marginTop: 4,
+        fontSize: 12, marginTop: 6,
       }}>DePauw University · USA</div>
 
       <div style={{
-        marginTop: 16, display: 'flex',
+        marginTop: 20, display: 'flex',
         justifyContent: 'space-around',
         borderTop: '1px solid var(--c-border)',
-        paddingTop: 12,
+        paddingTop: 16,
       }}>
-        {[['3.95','GPA'],['8+','PROJ'],['3','INT']].map(([n, l]) => (
+        {[['3.95','GPA'],['8+','PROJECTS'],['3','INTERNSHIPS']].map(([n, l]) => (
           <div key={l} style={{ textAlign: 'center' }}>
             <div style={{
               fontFamily: 'monospace', color: 'var(--c-primary)',
-              fontSize: 18, fontWeight: 700,
+              fontSize: 24, fontWeight: 700,
             }}>{n}</div>
             <div style={{
-              fontFamily: 'monospace', color: 'var(--c-muted)', fontSize: 9,
+              fontFamily: 'monospace', color: 'var(--c-muted)', fontSize: 11,
             }}>{l}</div>
           </div>
         ))}

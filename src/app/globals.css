@@ -8,3 +8,23 @@ body {
   font-family: var(--font-body, Arial, sans-serif);
   margin: 0;
 }
+
+@keyframes portalBob {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(16px, 0, 0);
+  }
+}
+
+.portal-bob {
+  animation: portalBob 2.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-bob {
+    animation: none;
+  }
+}

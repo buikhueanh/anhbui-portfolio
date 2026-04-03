@@ -16,7 +16,7 @@ export function ResumeTabContent({ tab }: Props) {
       <div
         style={{
           color: 'var(--c-soft)',
-          fontSize: 12,
+          fontSize: 16,
           lineHeight: 1.7,
         }}
       >
@@ -25,7 +25,7 @@ export function ResumeTabContent({ tab }: Props) {
         analytics, and internal tools, with a strong interest in turning
         technical ideas into real user impact.
         <br />
-        <span style={{ color: 'var(--c-muted)', fontSize: 11 }}>
+        <span style={{ color: 'var(--c-muted)', fontSize: 14 }}>
           DePauw University · Computer Science + Business Analytics · 3.95 GPA
         </span>
       </div>
@@ -45,7 +45,7 @@ export function ResumeTabContent({ tab }: Props) {
               color: 'var(--c-soft)',
               padding: '3px 8px',
               borderRadius: 4,
-              fontSize: 10,
+              fontSize: 13,
             }}
           >
             {s}
@@ -70,7 +70,7 @@ export function ResumeTabContent({ tab }: Props) {
           <span
             style={{
               color: 'var(--c-soft)',
-              fontSize: 12,
+              fontSize: 15,
             }}
           >
             {a}

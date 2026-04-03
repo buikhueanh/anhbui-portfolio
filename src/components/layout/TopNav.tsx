@@ -6,21 +6,40 @@ import { navItems } from '@/data/navigation'
 export function TopNav() {
   const { active, go } = useSection()
   return (
-    <nav style={{
-      background: 'var(--c-bg)',
-      borderBottom: '1px solid var(--c-border)',
-      display: 'flex', alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: '0 20px', height: 48, flexShrink: 0,
-    }}>
-      <span style={{
-        fontFamily: 'monospace', color: 'var(--c-primary)',
-        fontSize: 12, letterSpacing: 3,
-      }}>PF.EXE</span>
+    <nav
+      className="flex h-16 flex-shrink-0 items-center justify-between gap-3 border-b px-4 md:px-7"
+      style={{
+        background: 'var(--c-bg)',
+        borderColor: 'var(--c-border)',
+      }}
+    >
+      <button
+        type="button"
+        onClick={() => go('hero')}
+        className="shrink-0"
+        style={{
+          background: 'transparent',
+          border: 'none',
+          padding: 0,
+          cursor: 'pointer',
+          fontFamily: 'monospace',
+          color: 'var(--c-primary)',
+          fontSize: 18,
+          letterSpacing: 3,
+        }}
+      >
+        PF.EXE
+      </button>
 
-      <div style={{ display: 'flex', gap: 2 }}>
+      <div
+        className="flex min-w-0 flex-1 justify-start gap-1 overflow-x-auto md:justify-center"
+        style={{
+          WebkitOverflowScrolling: 'touch',
+        }}
+      >
         {navItems.map(n => (
           <button key={n.id} onClick={() => go(n.id)}
+            className="shrink-0 rounded-md px-3 py-1.5 text-base md:px-4 md:py-2 md:text-lg"
             style={{
               background: active === n.id
                 ? 'var(--c-surface)' : 'transparent',
@@ -29,8 +48,7 @@ export function TopNav() {
                 : '1px solid transparent',
               color: active === n.id
                 ? 'var(--c-light)' : 'var(--c-muted)',
-              padding: '5px 11px', borderRadius: 5,
-              cursor: 'pointer', fontSize: 12,
+              cursor: 'pointer', letterSpacing: 2,
               fontFamily: 'inherit',
             }}>
             {n.label}
@@ -38,13 +56,13 @@ export function TopNav() {
         ))}
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+      <div className="hidden items-center gap-2 md:flex">
         <div style={{
-          width: 7, height: 7, borderRadius: '50%',
+          width: 10, height: 10, borderRadius: '50%',
           background: 'var(--c-highlight)',
         }} />
         <span style={{
-          fontFamily: 'monospace', color: 'var(--c-muted)', fontSize: 10,
+          fontFamily: 'monospace', color: 'var(--c-muted)', fontSize: 15,
         }}>OPEN TO WORK</span>
       </div>
     </nav>

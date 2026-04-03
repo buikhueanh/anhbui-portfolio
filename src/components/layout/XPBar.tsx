@@ -18,7 +18,7 @@ export function XPBar({ xp }: Props) {
     }}>
       <span style={{
         fontFamily: 'monospace', color: 'var(--c-muted)',
-        fontSize: 9, letterSpacing: 2, minWidth: 60,
+        fontSize: 12, letterSpacing: 2, minWidth: 60,
       }}>XP {xp}/100</span>
 
       <div style={{
@@ -36,7 +36,7 @@ export function XPBar({ xp }: Props) {
 
       <span style={{
         fontFamily: 'monospace', color: 'var(--c-muted)',
-        fontSize: 9, letterSpacing: 2,
+        fontSize: 12, letterSpacing: 2,
       }}>{zone}</span>
     </div>
   )

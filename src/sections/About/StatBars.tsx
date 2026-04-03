@@ -10,16 +10,17 @@ export function StatBars({ skills }: Props) {
       {skills.map(s => (
         <div key={s.name}
           onMouseEnter={() => setHovered(s.name)}
-          onMouseLeave={() => setHovered(null)}>
+          onMouseLeave={() => setHovered(null)}
+          style={{ position: 'relative' }}>
           <div style={{
             display: 'flex', justifyContent: 'space-between',
             marginBottom: 4,
           }}>
-            <span style={{ color: 'var(--c-light)', fontSize: 12 }}>
+            <span style={{ color: 'var(--c-light)', fontSize: 15 }}>
               {s.name}
             </span>
             <span style={{
-              fontFamily: 'monospace', color: s.color, fontSize: 11,
+              fontFamily: 'monospace', color: s.color, fontSize: 13,
             }}>
               LVL {Math.round(s.level / 10)}
             </span>
@@ -35,10 +36,24 @@ export function StatBars({ skills }: Props) {
             }} />
           </div>
           {hovered === s.name && s.usedIn.length > 0 && (
-            <div style={{
-              fontFamily: 'monospace', color: 'var(--c-muted)',
-              fontSize: 10, marginTop: 3,
-            }}>
+            <div
+              style={{
+                position: 'absolute',
+                left: 0,
+                top: '100%',
+                transform: 'translateY(6px)',
+                zIndex: 20,
+                fontFamily: 'monospace',
+                color: 'var(--c-muted)',
+                fontSize: 10,
+                background: 'var(--c-surface)',
+                border: '1px solid var(--c-border)',
+                borderRadius: 8,
+                padding: '6px 8px',
+                whiteSpace: 'nowrap',
+                pointerEvents: 'none',
+              }}
+            >
               Used in: {s.usedIn.join(' · ')}
             </div>
           )}
