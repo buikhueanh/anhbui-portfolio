@@ -16,11 +16,11 @@ export function ExperienceDetail({ job }: Props) {
       }}>
         <div>
           <div style={{
-            color: 'var(--c-light)', fontSize: 15, fontWeight: 600,
+            color: 'var(--c-light)', fontSize: 20, fontWeight: 600,
           }}>{job.role}</div>
           <div style={{
             fontFamily: 'monospace', color: job.color,
-            fontSize: 11, marginTop: 2,
+            fontSize: 15, marginTop: 2,
           }}>{job.company}</div>
         </div>
         <span style={{
@@ -28,35 +28,35 @@ export function ExperienceDetail({ job }: Props) {
           background: 'var(--c-surface-2)',
           border: '1px solid ' + job.color,
           color: job.color, padding: '3px 9px',
-          borderRadius: 5, fontSize: 10,
+          borderRadius: 5, fontSize: 12,
         }}>{job.xpLabel}</span>
       </div>
 
       <div style={{
         fontFamily: 'monospace', color: 'var(--c-muted)',
-        fontSize: 9, letterSpacing: 2, marginBottom: 5,
+        fontSize: 16, letterSpacing: 2, marginBottom: 5,
       }}>QUEST</div>
       <div style={{
-        color: 'var(--c-soft)', fontSize: 12,
+        color: 'var(--c-soft)', fontSize: 15,
         marginBottom: 14, lineHeight: 1.6,
       }}>{job.quest}</div>
 
       <div style={{
         fontFamily: 'monospace', color: 'var(--c-muted)',
-        fontSize: 9, letterSpacing: 2, marginBottom: 7,
+        fontSize: 16, letterSpacing: 2, marginBottom: 7,
       }}>ACHIEVEMENTS</div>
       {job.achievements.map((a, i) => (
         <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 6 }}>
-          <span style={{ color: job.color, fontSize: 11 }}>▸</span>
+          <span style={{ color: job.color, fontSize: 16 }}>▸</span>
           <span style={{
-            color: 'var(--c-soft)', fontSize: 12, lineHeight: 1.5,
+            color: 'var(--c-soft)', fontSize: 15, lineHeight: 1.5,
           }}>{a}</span>
         </div>
       ))}
 
       <div style={{
         fontFamily: 'monospace', color: 'var(--c-muted)',
-        fontSize: 9, letterSpacing: 2,
+        fontSize: 16, letterSpacing: 2,
         marginTop: 12, marginBottom: 7,
       }}>TOOLS EQUIPPED</div>
       <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
@@ -66,7 +66,7 @@ export function ExperienceDetail({ job }: Props) {
             background: 'var(--c-surface-2)',
             border: '1px solid var(--c-border-hi)',
             color: 'var(--c-soft)',
-            padding: '3px 9px', borderRadius: 4, fontSize: 10,
+            padding: '3px 9px', borderRadius: 4, fontSize: 12,
           }}>{t}</span>
         ))}
       </div>

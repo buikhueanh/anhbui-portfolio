@@ -79,14 +79,19 @@ export function ContactForm() {
     borderRadius: 6,
     color: 'var(--c-light)',
     padding: '9px 12px',
-    fontSize: 12,
+    fontSize: 15,
     fontFamily: 'inherit',
     outline: 'none',
     boxSizing: 'border-box' as const,
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} style={{
+      background: 'var(--c-surface)',
+      border: '1px solid var(--c-border-hi)',
+      borderRadius: 12, padding: 24,
+      display: 'flex', flexDirection: 'column',
+    }}>
       {[
         ['NAME', 'name', 'Your name'],
         ['EMAIL', 'email', 'your@email.com'],
@@ -96,7 +101,7 @@ export function ContactForm() {
             style={{
               fontFamily: 'monospace',
               color: 'var(--c-muted)',
-              fontSize: 9,
+              fontSize: 12,
               letterSpacing: 2,
               marginBottom: 5,
             }}
@@ -124,7 +129,7 @@ export function ContactForm() {
           style={{
             fontFamily: 'monospace',
             color: 'var(--c-muted)',
-            fontSize: 9,
+            fontSize: 12,
             letterSpacing: 2,
             marginBottom: 5,
           }}
@@ -150,14 +155,16 @@ export function ContactForm() {
         type="submit"
         disabled={status === 'sending'}
         style={{
+          marginTop: 'auto',
           fontFamily: 'monospace',
           background: 'var(--c-accent)',
           color: '#2A0A1A',
           border: 'none',
-          padding: '10px 22px',
+          padding: '12px 22px',
           borderRadius: 6,
           cursor: 'pointer',
-          fontSize: 12,
+          fontSize: 14,
+          width: '100%',
           fontWeight: 700,
           letterSpacing: 1,
           opacity: status === 'sending' ? 0.6 : 1,

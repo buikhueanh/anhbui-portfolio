@@ -16,10 +16,10 @@ export function HighlightStats({ stats }: Props) {
         }}>
           <div style={{
             fontFamily: 'monospace', color: 'var(--c-muted)',
-            fontSize: 9, letterSpacing: 1, marginBottom: 3,
+            fontSize: 12, letterSpacing: 1, marginBottom: 5,
           }}>{s.label}</div>
           <div style={{
-            color: 'var(--c-light)', fontSize: 14, fontWeight: 600,
+            color: 'var(--c-light)', fontSize: 20, fontWeight: 600,
           }}>{s.value}</div>
         </div>
       ))}

@@ -22,10 +22,10 @@ export function ChannelCard({ label, value, color, href }: Props) {
       <div style={{ flex: 1 }}>
         <div style={{
           fontFamily: 'monospace', color,
-          fontSize: 9, letterSpacing: 1, marginBottom: 1,
+          fontSize: 12, letterSpacing: 1, marginBottom: 2,
         }}>{label}</div>
         <div style={{
-          color: 'var(--c-light)', fontSize: 12,
+          color: 'var(--c-light)', fontSize: 15,
         }}>{value}</div>
       </div>
       <span style={{ color: 'var(--c-muted)', fontSize: 11 }}>›</span>

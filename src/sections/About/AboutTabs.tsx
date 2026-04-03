@@ -14,7 +14,7 @@ export function AboutTabs({ active, onChange }: Props) {
           border: '1px solid ' + (active === t
             ? 'var(--c-primary)' : 'var(--c-border)'),
           padding: '5px 13px', borderRadius: 5,
-          cursor: 'pointer', fontSize: 11,
+          cursor: 'pointer', fontSize: 15,
           letterSpacing: 1, textTransform: 'uppercase',
           transition: 'all 0.15s',
         }}>{t}</button>
