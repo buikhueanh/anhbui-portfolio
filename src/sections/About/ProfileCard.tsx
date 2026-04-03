@@ -11,7 +11,7 @@ export function ProfileCard() {
         border: '2px solid var(--c-primary)',
         borderRadius: 14, overflow: 'hidden',
       }}>
-        <img src="/profile-image.jpg" alt="Anh Bui"
+        <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/profile-image.jpg`} alt="Anh Bui"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       </div>
 
