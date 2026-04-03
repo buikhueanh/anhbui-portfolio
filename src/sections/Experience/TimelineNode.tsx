@@ -11,7 +11,7 @@ export function TimelineNode({ job, isActive, isLast, onClick }: Props) {
   return (
     <div
       onClick={onClick}
-      className="flex cursor-pointer gap-3 md:flex-1"
+      className="flex cursor-pointer gap-3 xl:flex-1"
       style={{
         display: 'flex',
         flexDirection: 'row',

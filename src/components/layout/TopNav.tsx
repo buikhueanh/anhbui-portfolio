@@ -32,7 +32,7 @@ export function TopNav() {
       </button>
 
       <div
-        className="flex min-w-0 flex-1 gap-1 overflow-x-auto"
+        className="flex min-w-0 flex-1 justify-start gap-1 overflow-x-auto md:justify-center"
         style={{
           WebkitOverflowScrolling: 'touch',
         }}

@@ -18,6 +18,39 @@ export function RoomObject({ obj }: Props) {
   const topPct = `${(obj.top / ROOM_H) * 100}%`
   const leftPct = `${(obj.left / ROOM_W) * 100}%`
 
+  const isNearLeft = obj.left < ROOM_W * 0.18
+  const isNearRight = obj.left > ROOM_W * 0.82
+  const isNearTop = obj.top < ROOM_H * 0.12
+
+  const tooltipStyle: React.CSSProperties = {
+    position: 'absolute',
+    background: 'var(--c-bg)',
+    border: '1px solid var(--c-primary)',
+    color: 'var(--c-primary)',
+    fontFamily: 'monospace',
+    fontSize: 9,
+    padding: '2px 7px',
+    borderRadius: 3,
+    whiteSpace: 'nowrap',
+    zIndex: 10,
+    pointerEvents: 'none',
+  }
+
+  if (isNearTop) {
+    tooltipStyle.top = 50
+  } else {
+    tooltipStyle.top = -24
+  }
+
+  if (isNearLeft) {
+    tooltipStyle.left = 0
+  } else if (isNearRight) {
+    tooltipStyle.right = 0
+  } else {
+    tooltipStyle.left = '50%'
+    tooltipStyle.transform = 'translateX(-50%)'
+  }
+
   return (
     <div
       onMouseEnter={() => setHovered(true)}
@@ -42,16 +75,7 @@ export function RoomObject({ obj }: Props) {
       </div>
 
       {hovered && (
-        <div style={{
-          position: 'absolute', top: -24,
-          left: '50%', transform: 'translateX(-50%)',
-          background: 'var(--c-bg)',
-          border: '1px solid var(--c-primary)',
-          color: 'var(--c-primary)',
-          fontFamily: 'monospace', fontSize: 9,
-          padding: '2px 7px', borderRadius: 3,
-          whiteSpace: 'nowrap', zIndex: 10,
-        }}>
+        <div style={tooltipStyle}>
           {obj.tip}
         </div>
       )}

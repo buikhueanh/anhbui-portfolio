@@ -10,7 +10,7 @@ export function MiniMap() {
   if (typeof document === 'undefined') return null
 
   return createPortal(
-    <div className="fixed right-3 top-1/2 z-50 hidden -translate-y-1/2 flex-col gap-1.5 md:flex">
+    <div className="fixed right-3 top-1/2 z-50 hidden -translate-y-1/2 flex-col gap-1.5 xl:flex">
       {navItems.map((n) => (
         <div
           key={n.id}

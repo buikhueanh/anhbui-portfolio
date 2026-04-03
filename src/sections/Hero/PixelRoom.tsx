@@ -47,16 +47,18 @@ export function PixelRoom() {
         display: 'flex', flexDirection: 'column',
         alignItems: 'center',
       }}>
-        <div style={{
-          width: 28, height: 28,
-          background: 'var(--c-accent)',
-          borderRadius: '50% 50% 0 0',
-        }} />
-        <div style={{
-          width: 28, height: 36,
-          background: 'var(--c-secondary)',
-          borderRadius: 2,
-        }} />
+        <div className="portal-bob">
+          <div style={{
+            width: 28, height: 28,
+            background: 'var(--c-accent)',
+            borderRadius: '50% 50% 0 0',
+          }} />
+          <div style={{
+            width: 28, height: 36,
+            background: 'var(--c-secondary)',
+            borderRadius: 2,
+          }} />
+        </div>
       </div>
 
       {['var(--c-primary)','var(--c-secondary)','var(--c-accent)']

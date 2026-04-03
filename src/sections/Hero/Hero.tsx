@@ -4,7 +4,7 @@ import { PixelRoom } from './PixelRoom'
 export function Hero() {
   return (
     <div
-      className="flex flex-col items-center justify-center md:flex-row"
+      className="flex flex-col items-center justify-center xl:flex-row"
       style={{
         minHeight: 'calc(100vh - 120px)',
         padding: '0 clamp(16px, 5vw, 80px)',

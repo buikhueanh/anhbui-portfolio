@@ -33,7 +33,7 @@ export function TimelineNav({ jobs, activeIndex, onSelect, renderMobileDetail }:
               {activeIndex === i && (
                 <motion.div
                   key={job.id + '_detail'}
-                  className="mt-3 md:hidden"
+                  className="mt-3 xl:hidden"
                   style={{ paddingLeft: 48, overflow: 'hidden' }}
                   initial={{ height: 0, opacity: 0, y: -6 }}
                   animate={{ height: 'auto', opacity: 1, y: 0 }}

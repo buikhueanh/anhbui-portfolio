@@ -14,7 +14,10 @@ export function HeroText() {
   }, [])
 
   return (
-    <div className="pt-10 md:pt-0" style={{ flex: 1, minWidth: 'min(280px, 100%)' }}>
+    <div
+      className="mx-auto flex flex-col items-center pt-16 text-center xl:mx-0 xl:items-start xl:pt-0 xl:text-left"
+      style={{ flex: 1, minWidth: 'min(280px, 100%)' }}
+    >
       <div
         style={{
           fontFamily: 'monospace',
@@ -38,48 +41,52 @@ export function HeroText() {
         }}
       >
         Anh Bui.<br />
-        <span
-          style={{
-            display: 'inline-flex',
-            width: 'min(560px, 100%)',
-            boxSizing: 'border-box',
-            background: 'var(--c-surface-2)',
-            border: '1px solid var(--c-border-hi)',
-            borderRadius: 10,
-            padding: '10px 12px',
-            // Fixed/intentional typing area so surrounding UI never shifts.
-            // 4 lines at the h1's line-height (1.2).
-            height: '4.8em',
-            overflow: 'hidden',
-            alignItems: 'flex-start',
-          }}
-        >
-          <span style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
-            <span style={{ color: 'var(--c-primary)' }}>I</span>
-            <span style={{ color: 'var(--c-secondary)', minWidth: 0 }}>
-              <TypewriterText
-                className="block"
-                phrases={[
-                  'build & turn ideas into products.',
-                  'work with data & train ML models.',
-                  'bridge tech & business outcomes.',
-                ]}
-                typingMs={46}
-                deletingMs={24}
-                pauseMs={850}
-              />
+        <span className="flex w-full justify-center xl:justify-start">
+          <span
+            style={{
+              display: 'inline-flex',
+              width: 'min(560px, 100%)',
+              boxSizing: 'border-box',
+              background: 'var(--c-surface-2)',
+              border: '1px solid var(--c-border-hi)',
+              borderRadius: 10,
+              padding: '10px 12px',
+              // Fixed/intentional typing area so surrounding UI never shifts.
+              // 4 lines at the h1's line-height (1.2).
+              height: '4.8em',
+              overflow: 'hidden',
+              alignItems: 'flex-start',
+            }}
+          >
+            <span style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+              <span style={{ color: 'var(--c-primary)' }}>I</span>
+              <span style={{ color: 'var(--c-secondary)', minWidth: 0 }}>
+                <TypewriterText
+                  className="block"
+                  phrases={[
+                    'build & turn ideas into products.',
+                    'work with data & train ML models.',
+                    'bridge tech & business outcomes.',
+                  ]}
+                  typingMs={46}
+                  deletingMs={24}
+                  pauseMs={850}
+                />
+              </span>
             </span>
           </span>
         </span>
       </h1>
 
       <p
+        className="mx-auto xl:mx-0"
         style={{
           color: 'var(--c-soft)',
           fontSize: 'clamp(15px, 4.4vw, 20px)',
           lineHeight: 1.7,
           maxWidth: 'min(560px, 100%)',
-          margin: '0 0 28px',
+          margin: 0,
+          marginBottom: 28,
         }}
       >
         Computer Science and Business Analytics student building full-stack,
@@ -87,7 +94,7 @@ export function HeroText() {
         product, and analytics.
       </p>
 
-      <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+      <div className="flex w-full flex-wrap justify-center gap-2.5 xl:justify-start">
         <button
           onClick={() => go('about')}
           style={{
@@ -125,7 +132,7 @@ export function HeroText() {
         </button>
       </div>
 
-      <div style={{ marginTop: 24, display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+      <div className="flex w-full flex-wrap justify-center gap-4 xl:justify-start" style={{ marginTop: 24 }}>
         {([
           ['3.95', 'gpa'],
           ['8+', 'projects'],
