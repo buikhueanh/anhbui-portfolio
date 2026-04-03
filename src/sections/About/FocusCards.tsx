@@ -22,7 +22,7 @@ export function FocusCards() {
         }}>
           <div style={{
             fontFamily: 'monospace', color: 'var(--c-secondary)',
-            fontSize: 10, letterSpacing: 1, marginBottom: 5,
+            fontSize: 15, letterSpacing: 1, marginBottom: 5,
           }}>{title!.toUpperCase()}</div>
           <div style={{
             color: 'var(--c-soft)', fontSize: 12, lineHeight: 1.6,

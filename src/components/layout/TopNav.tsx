@@ -11,14 +11,14 @@ export function TopNav() {
       borderBottom: '1px solid var(--c-border)',
       display: 'flex', alignItems: 'center',
       justifyContent: 'space-between',
-      padding: '0 20px', height: 48, flexShrink: 0,
+      padding: '0 28px', height: 64, flexShrink: 0,
     }}>
       <span style={{
         fontFamily: 'monospace', color: 'var(--c-primary)',
-        fontSize: 12, letterSpacing: 3,
+        fontSize: 18, letterSpacing: 3,
       }}>PF.EXE</span>
 
-      <div style={{ display: 'flex', gap: 2 }}>
+      <div style={{ display: 'flex', gap: 4 }}>
         {navItems.map(n => (
           <button key={n.id} onClick={() => go(n.id)}
             style={{
@@ -29,8 +29,8 @@ export function TopNav() {
                 : '1px solid transparent',
               color: active === n.id
                 ? 'var(--c-light)' : 'var(--c-muted)',
-              padding: '5px 11px', borderRadius: 5,
-              cursor: 'pointer', fontSize: 12,
+              padding: '7px 16px', borderRadius: 6,
+              cursor: 'pointer', fontSize: 18, letterSpacing: 2,
               fontFamily: 'inherit',
             }}>
             {n.label}
@@ -38,13 +38,13 @@ export function TopNav() {
         ))}
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
         <div style={{
-          width: 7, height: 7, borderRadius: '50%',
+          width: 10, height: 10, borderRadius: '50%',
           background: 'var(--c-highlight)',
         }} />
         <span style={{
-          fontFamily: 'monospace', color: 'var(--c-muted)', fontSize: 10,
+          fontFamily: 'monospace', color: 'var(--c-muted)', fontSize: 15,
         }}>OPEN TO WORK</span>
       </div>
     </nav>

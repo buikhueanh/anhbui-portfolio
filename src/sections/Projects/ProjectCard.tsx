@@ -17,7 +17,7 @@ export function ProjectCard({ project: p, onSelect }: Props) {
         background: 'var(--c-surface)',
         border: '1px solid ' +
           (hov ? p.color : 'var(--c-border)'),
-        borderRadius: 10, padding: 13,
+        borderRadius: 10, padding: 20,
         cursor: 'pointer',
         transition: 'border 0.15s',
         position: 'relative', overflow: 'hidden',
@@ -33,7 +33,7 @@ export function ProjectCard({ project: p, onSelect }: Props) {
         alignItems: 'flex-start', marginBottom: 8,
       }}>
         <div style={{
-          width: 30, height: 30,
+          width: 40, height: 40,
           background: 'var(--c-surface-2)',
           border: '1px solid var(--c-border)',
           borderRadius: 6, display: 'flex',
@@ -48,25 +48,25 @@ export function ProjectCard({ project: p, onSelect }: Props) {
           fontFamily: 'monospace',
           background: 'var(--c-surface-2)',
           border: '1px solid var(--c-border-hi)',
-          color: p.color, fontSize: 9,
-          padding: '2px 7px', borderRadius: 10,
+          color: p.color, fontSize: 12,
+          padding: '3px 10px', borderRadius: 10,
         }}>{p.type}</span>
       </div>
       <div style={{
-        color: 'var(--c-light)', fontSize: 13,
-        fontWeight: 600, marginBottom: 4,
+        color: 'var(--c-light)', fontSize: 17,
+        fontWeight: 600, marginBottom: 6,
       }}>{p.title}</div>
       <div style={{
-        color: 'var(--c-muted)', fontSize: 11,
-        lineHeight: 1.5, marginBottom: 9,
+        color: 'var(--c-muted)', fontSize: 14,
+        lineHeight: 1.5, marginBottom: 12,
       }}>{p.shortDesc}</div>
-      <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
         {p.stack.map(s => (
           <span key={s} style={{
             fontFamily: 'monospace',
             background: 'var(--c-surface-2)',
-            color: 'var(--c-soft)', fontSize: 9,
-            padding: '2px 6px', borderRadius: 3,
+            color: 'var(--c-soft)', fontSize: 12,
+            padding: '3px 8px', borderRadius: 3,
           }}>{s}</span>
         ))}
       </div>

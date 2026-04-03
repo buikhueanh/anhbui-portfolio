@@ -8,9 +8,9 @@ export function Hero() {
       height: 'calc(100vh - 120px)',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '0 60px',
-      gap: 60,
-      maxWidth: 1000,
+      padding: '0 clamp(24px, 5vw, 80px)',
+      gap: 'clamp(32px, 5vw, 80px)',
+      maxWidth: 1400,
       margin: '0 auto',
       width: '100%',
     }}>

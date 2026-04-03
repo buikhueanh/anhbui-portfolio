@@ -15,11 +15,11 @@ export function StatBars({ skills }: Props) {
             display: 'flex', justifyContent: 'space-between',
             marginBottom: 4,
           }}>
-            <span style={{ color: 'var(--c-light)', fontSize: 12 }}>
+            <span style={{ color: 'var(--c-light)', fontSize: 15 }}>
               {s.name}
             </span>
             <span style={{
-              fontFamily: 'monospace', color: s.color, fontSize: 11,
+              fontFamily: 'monospace', color: s.color, fontSize: 13,
             }}>
               LVL {Math.round(s.level / 10)}
             </span>

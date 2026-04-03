@@ -14,7 +14,7 @@ type Tab = 'skills' | 'stack' | 'focus'
 export function About() {
   const [tab, setTab] = useState<Tab>('skills')
   return (
-    <div style={{ padding: '32px 0', maxWidth: 900, margin: '0 auto', width: '100%', paddingLeft: 40, paddingRight: 40 }}>
+    <div style={{ padding: '32px 24px', maxWidth: 1400, margin: '0 auto', width: '100%' }}>
       <div style={{
         display: 'flex', alignItems: 'baseline',
         gap: 12, borderBottom: '1px solid var(--c-border)',
@@ -22,7 +22,7 @@ export function About() {
       }}>
         <span style={{
           fontFamily: 'monospace', color: 'var(--c-muted)',
-          fontSize: 10, letterSpacing: 3,
+          fontSize: 15, letterSpacing: 3,
         }}>ZONE 01</span>
         <span style={{
           fontFamily: 'monospace', color: 'var(--c-light)',
@@ -32,16 +32,17 @@ export function About() {
 
       <div style={{
         display: 'grid',
-        gridTemplateColumns: '240px 1fr', gap: 24,
+        gridTemplateColumns: '380px 1fr', gap: 40,
       }}>
         {/* Left column: profile + status */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 14, alignSelf: 'stretch' }}>
           <ProfileCard />
-          <StatusPanel />
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+            <StatusPanel />
+          </div>
         </div>
 
-        {/* Right column: tabs + content (capped at 2/3 width) */}
-        <div style={{ maxWidth: '66%' }}>
+        <div style={{ minWidth: 0 }}>
           <AboutTabs active={tab} onChange={setTab} />
           {tab === 'skills' && <StatBars skills={skills} />}
           {tab === 'stack' && <SkillInventory chips={stackChips} />}

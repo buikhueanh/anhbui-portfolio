@@ -15,15 +15,15 @@ export function Resume() {
   }, [])
 
   return (
-    <div style={{ padding: '24px 28px' }}>
+    <div style={{ padding: '32px 24px', maxWidth: 1400, margin: '0 auto', width: '100%' }}>
       <div style={{
         display: 'flex', alignItems: 'baseline',
         gap: 12, borderBottom: '1px solid var(--c-border)',
-        paddingBottom: 14, marginBottom: 22,
+        paddingBottom: 14, marginBottom: 28,
       }}>
         <span style={{
           fontFamily: 'monospace', color: 'var(--c-muted)',
-          fontSize: 10, letterSpacing: 3,
+          fontSize: 15, letterSpacing: 3,
         }}>ZONE 04</span>
         <span style={{
           fontFamily: 'monospace', color: 'var(--c-light)',
@@ -31,7 +31,7 @@ export function Resume() {
         }}>RESUME</span>
       </div>
 
-      <div style={{ maxWidth: 520, margin: '0 auto' }}>
+      <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{
           background: 'var(--c-surface)',
           border: '1px solid var(--c-border-hi)',
@@ -53,16 +53,16 @@ export function Resume() {
             </div>
             <span style={{
               fontFamily: 'monospace', color: 'var(--c-muted)',
-              fontSize: 10, marginLeft: 4,
+              fontSize: 13, marginLeft: 4,
             }}>resume_terminal.exe</span>
           </div>
 
           <div style={{ padding: 22 }}>
             <div style={{
               fontFamily: 'monospace', color: 'var(--c-highlight)',
-              fontSize: 11, marginBottom: 12,
+              fontSize: 15, marginBottom: 16,
             }}>
-              {'$ cat RESUME_2025.pdf '}
+              {'$ cat ANH_BUI_RESUME.pdf '}
               <span style={{ opacity: blink ? 1 : 0 }}>█</span>
             </div>
 
@@ -80,7 +80,7 @@ export function Resume() {
                     border: '1px solid ' + (tab === t
                       ? 'var(--c-highlight)' : 'var(--c-border)'),
                     padding: '4px 10px', borderRadius: 4,
-                    cursor: 'pointer', fontSize: 10, letterSpacing: 1,
+                    cursor: 'pointer', fontSize: 13, letterSpacing: 1,
                   }}>{t.toUpperCase()}</button>
                 ))
               }
@@ -98,24 +98,24 @@ export function Resume() {
             <div style={{ display: 'flex', gap: 9 }}>
               <a href="/resume.pdf" download style={{
                 fontFamily: 'monospace',
-                background: 'var(--c-highlight)',
-                color: '#0F2A0F', border: 'none',
+                background: 'transparent',
+                color: 'var(--c-highlight)',
+                border: '1px solid var(--c-highlight)',
                 padding: '10px 18px', borderRadius: 6,
-                cursor: 'pointer', fontSize: 11, fontWeight: 700,
+                cursor: 'pointer', fontSize: 14, 
                 letterSpacing: 1,
-                opacity: blink ? 1 : 0.75,
-                transition: 'opacity 0.3s',
                 textDecoration: 'none',
                 display: 'inline-block',
               }}>▼ DOWNLOAD RESUME.EXE</a>
               <a href="/resume.pdf" target="_blank" rel="noreferrer" style={{
                 fontFamily: 'monospace',
-                background: 'transparent',
-                color: 'var(--c-highlight)',
-                border: '1px solid var(--c-highlight)',
+                background: 'var(--c-highlight)',
+                color: '#0F2A0F', border: 'none', 
                 padding: '10px 18px', borderRadius: 6,
-                cursor: 'pointer', fontSize: 11,
+                cursor: 'pointer', fontSize: 14,fontWeight: 700,
                 letterSpacing: 1,
+                opacity: blink ? 1 : 0.75,
+                transition: 'opacity 0.3s',
                 textDecoration: 'none',
                 display: 'inline-block',
               }}>⤢ PREVIEW</a>

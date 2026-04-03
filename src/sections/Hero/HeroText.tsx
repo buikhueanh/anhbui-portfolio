@@ -13,12 +13,12 @@ export function HeroText() {
   }, [])
 
   return (
-    <div style={{ flex: 1, minWidth: 0 }}>
+    <div style={{ flex: 1, minWidth: 'min(340px, 100%)' }}>
       <div
         style={{
           fontFamily: 'monospace',
           color: 'var(--c-secondary)',
-          fontSize: 10,
+          fontSize: 30,
           letterSpacing: 4,
           marginBottom: 10,
         }}
@@ -30,7 +30,7 @@ export function HeroText() {
         style={{
           fontFamily: 'monospace',
           color: 'var(--c-light)',
-          fontSize: 30,
+          fontSize: 50,
           lineHeight: 1.2,
           margin: '0 0 10px',
           letterSpacing: 1,
@@ -49,7 +49,7 @@ export function HeroText() {
       <p
         style={{
           color: 'var(--c-soft)',
-          fontSize: 13,
+          fontSize: 20,
           lineHeight: 1.7,
           maxWidth: 420,
           margin: '0 0 28px',
@@ -71,7 +71,7 @@ export function HeroText() {
             padding: '10px 20px',
             borderRadius: 6,
             cursor: 'pointer',
-            fontSize: 12,
+            fontSize: 20,
             fontWeight: 700,
             letterSpacing: 1,
             opacity: blink ? 1 : 0.75,
@@ -91,7 +91,7 @@ export function HeroText() {
             padding: '10px 18px',
             borderRadius: 6,
             cursor: 'pointer',
-            fontSize: 12,
+            fontSize: 20,
           }}
         >
           VIEW RESUME
@@ -109,7 +109,7 @@ export function HeroText() {
               style={{
                 fontFamily: 'monospace',
                 color: 'var(--c-primary)',
-                fontSize: 20,
+                fontSize: 25,
                 fontWeight: 700,
               }}
             >
@@ -119,7 +119,7 @@ export function HeroText() {
               style={{
                 fontFamily: 'monospace',
                 color: 'var(--c-muted)',
-                fontSize: 9,
+                fontSize: 20,
                 letterSpacing: 1,
               }}
             >

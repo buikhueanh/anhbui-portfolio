@@ -24,7 +24,7 @@ const CHANNELS = [
 
 export function Contact() {
   return (
-    <div style={{ padding: '32px 0', maxWidth: 860, margin: '0 auto', width: '100%', paddingLeft: 40, paddingRight: 40 }}>
+    <div style={{ padding: '32px 24px', maxWidth: 1400, margin: '0 auto', width: '100%' }}>
       <div
         style={{
           display: 'flex',
@@ -32,14 +32,14 @@ export function Contact() {
           gap: 12,
           borderBottom: '1px solid var(--c-border)',
           paddingBottom: 14,
-          marginBottom: 22,
+          marginBottom: 28,
         }}
       >
         <span
           style={{
             fontFamily: 'monospace',
             color: 'var(--c-muted)',
-            fontSize: 10,
+            fontSize: 15,
             letterSpacing: 3,
           }}
         >
@@ -61,17 +61,17 @@ export function Contact() {
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
-          gap: 24,
+          gap: 24, alignItems: 'stretch',
         }}
       >
         <div>
           <div
             style={{
               color: 'var(--c-light)',
-              fontSize: 20,
+              fontSize: 28,
               fontWeight: 600,
               lineHeight: 1.3,
-              marginBottom: 8,
+              marginBottom: 12,
             }}
           >
             {"Let's build"}<br />
@@ -83,9 +83,9 @@ export function Contact() {
           <div
             style={{
               color: 'var(--c-soft)',
-              fontSize: 13,
+              fontSize: 16,
               lineHeight: 1.7,
-              marginBottom: 20,
+              marginBottom: 24,
             }}
           >
             I'm a Computer Science and Business Analytics student at DePauw,
@@ -98,9 +98,9 @@ export function Contact() {
             style={{
               fontFamily: 'monospace',
               color: 'var(--c-muted)',
-              fontSize: 9,
+              fontSize: 12,
               letterSpacing: 2,
-              marginBottom: 10,
+              marginBottom: 12,
             }}
           >
             CHANNELS

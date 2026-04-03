@@ -23,7 +23,7 @@ export function Projects() {
     : projects.filter(p => p.type === filter)
 
   return (
-    <div style={{ padding: '32px 0', maxWidth: 960, margin: '0 auto', width: '100%', paddingLeft: 40, paddingRight: 40 }}>
+    <div style={{ padding: '32px 24px', maxWidth: 1400, margin: '0 auto', width: '100%' }}>
       <div style={{
         display: 'flex', alignItems: 'baseline',
         gap: 12, borderBottom: '1px solid var(--c-border)',
@@ -31,7 +31,7 @@ export function Projects() {
       }}>
         <span style={{
           fontFamily: 'monospace', color: 'var(--c-muted)',
-          fontSize: 10, letterSpacing: 3,
+          fontSize: 15, letterSpacing: 3,
         }}>ZONE 03</span>
         <span style={{
           fontFamily: 'monospace', color: 'var(--c-light)',

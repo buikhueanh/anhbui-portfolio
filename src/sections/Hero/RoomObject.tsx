@@ -21,13 +21,13 @@ export function RoomObject({ obj }: Props) {
       }}
     >
       <div style={{
-        width: 22, height: 22,
+        width: 44, height: 44,
         background: hovered
           ? 'var(--c-primary)' : 'var(--c-border-hi)',
         borderRadius: 4,
         display: 'flex', alignItems: 'center',
         justifyContent: 'center',
-        transition: 'background 0.15s', fontSize: 12,
+        transition: 'background 0.15s', fontSize: 22,
       }}>
         {obj.emoji}
       </div>
