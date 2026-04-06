@@ -42,28 +42,37 @@ export function HeroText() {
       >
         Anh Bui.<br />
         <span className="flex w-full justify-center xl:justify-start">
+          {/* Fixed border box — sized to the longest phrase, never resizes */}
           <span
-            className="typing-terminal"
             style={{
+              position: 'relative',
               display: 'block',
               width: '100%',
               maxWidth: 560,
-              boxSizing: 'border-box',
+              fontSize: 'clamp(34px, 9vw, 58px)',
+              lineHeight: 1.2,
+              height: '3.6em',
+              flexShrink: 0,
               background: 'var(--c-surface-2)',
               border: '1px solid var(--c-border-hi)',
               borderRadius: 10,
-              padding: '10px 12px',
-              fontSize: 'clamp(34px, 9vw, 58px)',
-              lineHeight: 1.2,
-              letterSpacing: 1,
-              height: '4.8em',
-              minHeight: '4.8em',
-              overflow: 'hidden',
             }}
           >
-            <span className="typing-terminal-inner" style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
-              <span style={{ color: 'var(--c-primary)' }}>I</span>
-              <span style={{ color: 'var(--c-secondary)', minWidth: 0 }}>
+            {/* Text layer — absolutely positioned so it never affects the border box size */}
+            <span
+              style={{
+                position: 'absolute',
+                inset: 0,
+                padding: '10px 12px',
+                overflow: 'hidden',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: 12,
+                letterSpacing: 1,
+              }}
+            >
+              <span style={{ color: 'var(--c-primary)', flexShrink: 0 }}>I</span>
+              <span style={{ color: 'var(--c-secondary)' }}>
                 <TypewriterText
                   className="block"
                   phrases={[
