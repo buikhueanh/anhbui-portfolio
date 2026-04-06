@@ -28,31 +28,3 @@ body {
     animation: none;
   }
 }
-
-/* Default typing terminal styles (inherit h1 sizing on non-phone screens). */
-.typing-terminal {
-  font-size: inherit;
-  line-height: inherit;
-  letter-spacing: inherit;
-  text-align: inherit;
-  height: 4.8em;
-}
-
-.typing-terminal-inner {
-  gap: 12px;
-}
-
-/* Very small phone typing terminal tweaks (e.g. iPhone 11 Pro width). */
-@media (max-width: 380px) {
-  .typing-terminal {
-    font-size: 20px !important;
-    line-height: 1.2 !important;
-    letter-spacing: 0 !important;
-    text-align: left !important;
-    height: 6.4em !important;
-  }
-
-  .typing-terminal-inner {
-    gap: 8px;
-  }
-}
