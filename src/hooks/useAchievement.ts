@@ -1,5 +1,5 @@
 // src/hooks/useAchievement.ts
-import { useState, useEffect } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import type { SectionId } from '../types'
 
 const MESSAGES: Record<SectionId, string> = {
@@ -14,7 +14,62 @@ const MESSAGES: Record<SectionId, string> = {
 export function useAchievement(active: SectionId) {
   const [current, setCurrent] = useState<string | null>(null)
 
+  const currentRef = useRef<string | null>(null)
+  const shownAtRef = useRef<number | null>(null)
+  const showTimeoutRef = useRef<number | null>(null)
+  const hideTimeoutRef = useRef<number | null>(null)
+
+  const clearTimers = useCallback(() => {
+    if (showTimeoutRef.current != null) {
+      clearTimeout(showTimeoutRef.current)
+      showTimeoutRef.current = null
+    }
+    if (hideTimeoutRef.current != null) {
+      clearTimeout(hideTimeoutRef.current)
+      hideTimeoutRef.current = null
+    }
+  }, [])
+
   useEffect(() => {
+    currentRef.current = current
+  }, [current])
+
+  useEffect(() => {
+    const dismissIfShowing = () => {
+      if (!currentRef.current) return
+      setCurrent(null)
+      shownAtRef.current = null
+      clearTimers()
+    }
+
+    const onVisibilityChange = () => {
+      if (document.hidden) {
+        dismissIfShowing()
+        return
+      }
+
+      // If we became visible again and the toast's intended lifetime
+      // has already elapsed, hide immediately.
+      const shownAt = shownAtRef.current
+      if (!shownAt) return
+      if (Date.now() - shownAt >= 1500) {
+        dismissIfShowing()
+      }
+    }
+
+    document.addEventListener('visibilitychange', onVisibilityChange)
+    // iOS Safari can fire pagehide more reliably than visibilitychange.
+    window.addEventListener('pagehide', dismissIfShowing)
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibilityChange)
+      window.removeEventListener('pagehide', dismissIfShowing)
+    }
+  }, [clearTimers])
+
+  useEffect(() => {
+    clearTimers()
+    shownAtRef.current = null
+
     const key = 'achievement_' + active
     if (active === 'hero') return
     if (sessionStorage.getItem(key)) return
@@ -22,16 +77,25 @@ export function useAchievement(active: SectionId) {
 
     // Defer state updates to callbacks to avoid synchronous setState
     // in the effect body (keeps behavior the same).
-    const show = window.setTimeout(() => setCurrent(MESSAGES[active]), 0)
-    const hide = window.setTimeout(() => setCurrent(null), 1500)
-    return () => {
-      clearTimeout(show)
-      clearTimeout(hide)
-    }
+    showTimeoutRef.current = window.setTimeout(() => {
+      setCurrent(MESSAGES[active])
+      shownAtRef.current = Date.now()
+    }, 0)
+
+    hideTimeoutRef.current = window.setTimeout(() => {
+      setCurrent(null)
+      shownAtRef.current = null
+    }, 1500)
+
+    return clearTimers
   }, [active])
 
   return {
     current,
-    dismiss: () => setCurrent(null),
+    dismiss: () => {
+      setCurrent(null)
+      shownAtRef.current = null
+      clearTimers()
+    },
   }
 }
