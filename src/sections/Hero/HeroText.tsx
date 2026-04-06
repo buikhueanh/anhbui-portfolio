@@ -66,6 +66,7 @@ export function HeroText() {
                 overflow: 'hidden',
                 display: 'flex',
                 alignItems: 'flex-start',
+                alignContent: 'center',
                 gap: 12,
                 letterSpacing: 1,
               }}
