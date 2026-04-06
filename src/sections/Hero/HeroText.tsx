@@ -54,7 +54,7 @@ export function HeroText() {
               padding: '10px 12px',
               // Keep the typing portal font consistent with the h1 on
               // non-phone screens.
-              fontSize: 'clamp(34px, 9vw, 58px)',
+              fontSize: 'clamp(50px, 9vw, 58px)',
               lineHeight: 1.2,
               letterSpacing: 1,
               // Fixed/intentional typing area so surrounding UI never shifts.
