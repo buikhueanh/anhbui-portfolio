@@ -45,11 +45,11 @@ body {
 /* Very small phone typing terminal tweaks (e.g. iPhone 11 Pro width). */
 @media (max-width: 380px) {
   .typing-terminal {
-    font-size: 20px;
-    line-height: 1.2;
-    letter-spacing: 0;
-    text-align: left;
-    height: 6.4em;
+    font-size: 20px !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0 !important;
+    text-align: left !important;
+    height: 6.4em !important;
   }
 
   .typing-terminal-inner {
