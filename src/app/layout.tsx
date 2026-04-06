@@ -2,15 +2,18 @@ import type { Metadata } from 'next'
 import { SectionProvider } from '@/context/SectionContext'
 import './globals.css'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: 'Enter my World: Anh Bui',
   description:
     'CS + Business student crafting full-stack, AI, and data-driven products.',
   openGraph: {
-    title: 'Anh Bui — Build. Analyze. Ship.',
+    title: 'Enter my World: Anh Bui',
     description:
       'Projects in software, AI, data, and product.',
-    images: [`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/profile-image.jpg`],
+    images: [`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/laptop-wave.png`],
   },
 }
 
