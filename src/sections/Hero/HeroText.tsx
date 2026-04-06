@@ -44,9 +44,8 @@ export function HeroText() {
         <span className="flex w-full justify-center xl:justify-start">
           <span
             style={{
-              display: 'block',
-              width: '100%',
-              maxWidth: 560,
+              display: 'inline-flex',
+              width: 'min(560px, 100%)',
               boxSizing: 'border-box',
               background: 'var(--c-surface-2)',
               border: '1px solid var(--c-border-hi)',
@@ -56,14 +55,12 @@ export function HeroText() {
               // 4 lines at the h1's line-height (1.2).
               height: '4.8em',
               overflow: 'hidden',
+              alignItems: 'flex-start',
             }}
           >
-            <span
-              className="flex items-start gap-3 text-[clamp(24px,7.2vw,40px)] max-[379px]:text-[clamp(20px,6.6vw,32px)]"
-              style={{ width: '100%' }}
-            >
+            <span style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
               <span style={{ color: 'var(--c-primary)' }}>I</span>
-              <span style={{ color: 'var(--c-secondary)', minWidth: 0, flex: 1 }}>
+              <span style={{ color: 'var(--c-secondary)', minWidth: 0 }}>
                 <TypewriterText
                   className="block"
                   phrases={[
