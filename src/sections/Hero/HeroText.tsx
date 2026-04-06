@@ -50,7 +50,7 @@ export function HeroText() {
               width: 'min(10em, 90vw)',
               fontSize: 'clamp(34px, 9vw, 58px)',
               lineHeight: 1.2,
-              height: '4.8em',
+              height: '5.2em',
               flexShrink: 0,
               background: 'var(--c-surface-2)',
               border: '1px solid var(--c-border-hi)',
