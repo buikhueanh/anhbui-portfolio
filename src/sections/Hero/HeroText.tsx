@@ -45,24 +45,20 @@ export function HeroText() {
           <span
             className="typing-terminal"
             style={{
-              display: 'flex',
-            flexShrink: 0,
-              width: 'min(560px, 100%)',
+              display: 'block',
+              width: '100%',
+              maxWidth: 560,
               boxSizing: 'border-box',
               background: 'var(--c-surface-2)',
               border: '1px solid var(--c-border-hi)',
               borderRadius: 10,
               padding: '10px 12px',
-              // Keep the typing portal font consistent with the h1 on
-              // non-phone screens.
               fontSize: 'clamp(34px, 9vw, 58px)',
               lineHeight: 1.2,
               letterSpacing: 1,
-              // Fixed/intentional typing area so surrounding UI never shifts.
-              // 4 lines at the h1's line-height (1.2).
               height: '4.8em',
+              minHeight: '4.8em',
               overflow: 'hidden',
-              alignItems: 'flex-start',
             }}
           >
             <span className="typing-terminal-inner" style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
