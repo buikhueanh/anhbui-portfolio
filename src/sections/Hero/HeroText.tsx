@@ -51,16 +51,27 @@ export function HeroText() {
               border: '1px solid var(--c-border-hi)',
               borderRadius: 10,
               padding: '10px 12px',
+              // Do not inherit the giant h1 font size on phones.
+              fontSize: 'clamp(22px, 7.2vw, 40px)',
+              lineHeight: 1.15,
               // Fixed/intentional typing area so surrounding UI never shifts.
-              // 4 lines at the h1's line-height (1.2).
-              height: '4.8em',
+              // Sized to handle wrapping on narrow screens.
+              height: '5.6em',
               overflow: 'hidden',
               alignItems: 'flex-start',
             }}
           >
             <span style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
               <span style={{ color: 'var(--c-primary)' }}>I</span>
-              <span style={{ color: 'var(--c-secondary)', minWidth: 0 }}>
+              <span
+                style={{
+                  color: 'var(--c-secondary)',
+                  minWidth: 0,
+                  maxWidth: '100%',
+                  overflowWrap: 'anywhere',
+                  wordBreak: 'break-word',
+                }}
+              >
                 <TypewriterText
                   className="block"
                   phrases={[
