@@ -52,24 +52,33 @@ export function HeroText() {
               borderRadius: 10,
               padding: '10px 12px',
               // Do not inherit the giant h1 font size on phones.
-              fontSize: 'clamp(22px, 7.2vw, 40px)',
-              lineHeight: 1.15,
+              fontSize: 'clamp(18px, 6.2vw, 34px)',
+              lineHeight: 1.2,
+              letterSpacing: 0,
+              textAlign: 'left',
               // Fixed/intentional typing area so surrounding UI never shifts.
               // Sized to handle wrapping on narrow screens.
-              height: '5.6em',
+              height: '6.6em',
               overflow: 'hidden',
               alignItems: 'flex-start',
             }}
           >
-            <span style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+            <span
+              style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: 'clamp(8px, 2.4vw, 12px)',
+                width: '100%',
+              }}
+            >
               <span style={{ color: 'var(--c-primary)' }}>I</span>
               <span
                 style={{
                   color: 'var(--c-secondary)',
                   minWidth: 0,
                   maxWidth: '100%',
-                  overflowWrap: 'anywhere',
-                  wordBreak: 'break-word',
+                  overflowWrap: 'normal',
+                  wordBreak: 'normal',
                 }}
               >
                 <TypewriterText
