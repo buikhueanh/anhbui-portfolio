@@ -34,7 +34,7 @@ export function HeroText() {
         style={{
           fontFamily: 'monospace',
           color: 'var(--c-light)',
-          fontSize: 'clamp(34px, 9vw, 50px)',
+          fontSize: 'clamp(34px, 9vw, 58px)',
           lineHeight: 1.2,
           margin: '0 0 10px',
           letterSpacing: 1,
@@ -43,6 +43,7 @@ export function HeroText() {
         Anh Bui.<br />
         <span className="flex w-full justify-center xl:justify-start">
           <span
+            className="typing-terminal"
             style={{
               display: 'inline-flex',
               width: 'min(560px, 100%)',
@@ -51,6 +52,11 @@ export function HeroText() {
               border: '1px solid var(--c-border-hi)',
               borderRadius: 10,
               padding: '10px 12px',
+              // Keep the typing portal font consistent with the h1 on
+              // non-phone screens.
+              fontSize: 'clamp(34px, 9vw, 58px)',
+              lineHeight: 1.2,
+              letterSpacing: 1,
               // Fixed/intentional typing area so surrounding UI never shifts.
               // 4 lines at the h1's line-height (1.2).
               height: '4.8em',
@@ -58,7 +64,7 @@ export function HeroText() {
               alignItems: 'flex-start',
             }}
           >
-            <span style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+            <span className="typing-terminal-inner" style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
               <span style={{ color: 'var(--c-primary)' }}>I</span>
               <span style={{ color: 'var(--c-secondary)', minWidth: 0 }}>
                 <TypewriterText
