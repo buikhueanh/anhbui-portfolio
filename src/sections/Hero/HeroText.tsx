@@ -47,8 +47,7 @@ export function HeroText() {
             style={{
               position: 'relative',
               display: 'block',
-              width: '100%',
-              maxWidth: '10em',
+              width: 'min(560px, 90vw)',
               fontSize: 'clamp(34px, 9vw, 58px)',
               lineHeight: 1.2,
               height: '4.8em',
