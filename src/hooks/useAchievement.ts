@@ -70,6 +70,13 @@ export function useAchievement(active: SectionId) {
     clearTimers()
     shownAtRef.current = null
 
+    // If we changed sections while a toast was visible (or its hide timer got
+    // cleared because the section was already visited), always dismiss.
+    if (currentRef.current) {
+      currentRef.current = null
+      setCurrent(null)
+    }
+
     const key = 'achievement_' + active
     if (active === 'hero') return
     if (sessionStorage.getItem(key)) return

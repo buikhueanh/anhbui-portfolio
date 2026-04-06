@@ -43,6 +43,7 @@ export function HeroText() {
         Anh Bui.<br />
         <span className="flex w-full justify-center xl:justify-start">
           <span
+            className="typing-terminal"
             style={{
               display: 'inline-flex',
               width: 'min(560px, 100%)',
@@ -51,36 +52,16 @@ export function HeroText() {
               border: '1px solid var(--c-border-hi)',
               borderRadius: 10,
               padding: '10px 12px',
-              // Do not inherit the giant h1 font size on phones.
-              fontSize: 'clamp(18px, 6.2vw, 34px)',
-              lineHeight: 1.2,
-              letterSpacing: 0,
-              textAlign: 'left',
               // Fixed/intentional typing area so surrounding UI never shifts.
-              // Sized to handle wrapping on narrow screens.
-              height: '6.6em',
+              // 4 lines at the h1's line-height (1.2).
+              height: '4.8em',
               overflow: 'hidden',
               alignItems: 'flex-start',
             }}
           >
-            <span
-              style={{
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: 'clamp(8px, 2.4vw, 12px)',
-                width: '100%',
-              }}
-            >
+            <span className="typing-terminal-inner" style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
               <span style={{ color: 'var(--c-primary)' }}>I</span>
-              <span
-                style={{
-                  color: 'var(--c-secondary)',
-                  minWidth: 0,
-                  maxWidth: '100%',
-                  overflowWrap: 'normal',
-                  wordBreak: 'normal',
-                }}
-              >
+              <span style={{ color: 'var(--c-secondary)', minWidth: 0 }}>
                 <TypewriterText
                   className="block"
                   phrases={[
