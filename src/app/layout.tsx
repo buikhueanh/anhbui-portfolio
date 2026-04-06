@@ -3,7 +3,7 @@ import { SectionProvider } from '@/context/SectionContext'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Anh Bui - Build. Analyze. Ship.',
+  title: 'Enter my World — Anh Bui',
   description:
     'CS + Business student crafting full-stack, AI, and data-driven products.',
   openGraph: {
