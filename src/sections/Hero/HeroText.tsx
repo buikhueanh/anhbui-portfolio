@@ -46,8 +46,8 @@ export function HeroText() {
             className="typing-terminal"
             style={{
               display: 'flex',
-              width: '100%',
-              maxWidth: 560,
+            flexShrink: 0,
+              width: 'min(560px, 100%)',
               boxSizing: 'border-box',
               background: 'var(--c-surface-2)',
               border: '1px solid var(--c-border-hi)',
@@ -91,8 +91,7 @@ export function HeroText() {
           color: 'var(--c-soft)',
           fontSize: 'clamp(15px, 4.4vw, 20px)',
           lineHeight: 1.7,
-          width: '100%',
-          maxWidth: 560,
+          maxWidth: 'min(560px, 100%)',
           margin: 0,
           marginBottom: 28,
         }}
