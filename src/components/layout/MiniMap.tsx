@@ -1,11 +1,19 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { useSection } from '@/context/SectionContext'
 import { navItems } from '@/data/navigation'
 import { createPortal } from 'react-dom'
 
 export function MiniMap() {
   const { active, go } = useSection()
+
+  // Prevent hydration mismatches: on the server there is no `document`, and
+  // portals can't render. Render nothing until after the component mounts.
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+
+  if (!mounted) return null
 
   if (typeof document === 'undefined') return null
 
