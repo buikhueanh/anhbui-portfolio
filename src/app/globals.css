@@ -29,6 +29,19 @@ body {
   }
 }
 
+/* Default typing terminal styles (inherit h1 sizing on non-phone screens). */
+.typing-terminal {
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-align: inherit;
+  height: 4.8em;
+}
+
+.typing-terminal-inner {
+  gap: 12px;
+}
+
 /* Very small phone typing terminal tweaks (e.g. iPhone 11 Pro width). */
 @media (max-width: 380px) {
   .typing-terminal {
