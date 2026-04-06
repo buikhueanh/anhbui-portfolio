@@ -58,7 +58,16 @@ export function HeroText() {
               alignItems: 'flex-start',
             }}
           >
-            <span style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+            <span
+              className="hero-typing-line"
+              style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: 12,
+                fontSize: 'clamp(22px, 6.8vw, 34px)',
+                lineHeight: 1.15,
+              }}
+            >
               <span style={{ color: 'var(--c-primary)' }}>I</span>
               <span style={{ color: 'var(--c-secondary)', minWidth: 0 }}>
                 <TypewriterText

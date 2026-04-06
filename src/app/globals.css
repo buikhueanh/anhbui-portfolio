@@ -28,3 +28,10 @@ body {
     animation: none;
   }
 }
+
+@media (max-width: 379px) {
+  .hero-typing-line {
+    font-size: 18px;
+    gap: 10px;
+  }
+}
